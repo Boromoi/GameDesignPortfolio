@@ -83,8 +83,6 @@ nav a.nav-link {
 
 /*CSS to change the front page image*/
 .humanoid-image {
-    display: flex;
-    flex: auto;
     opacity: 100%;
 }
 
@@ -111,12 +109,37 @@ nav a.nav-link {
     top: 50%;
 }
 
+.display-grid {
+    display: grid;
+}
+
+.container-row-gap-alinea {
+    row-gap: 5px;
+}
+
+.alinea-row-1 {
+    margin-bottom: 2%;
+}
+
+.alinea-row-2 {
+    margin-bottom: 5%;
+}
+
+.alinea-row-3 {
+    /*display: inline-block;
+    max-width: 100%;*/
+    word-break: break-all; /* This wraps the text so that it stays inside the div element */
+}
+
 .game-design-h1 {
     margin-bottom: 0px;
 }
 
-/* Boemerang logo's */
+.white-text {
+    color: #FFFFFF;
+}
 
+/* Boemerang logo's */
 .boemerang-logo-alinea {
     margin-top: 3%;
     width: 72px;
@@ -158,8 +181,5 @@ body {
     margin: 0px;
     padding: 0px;
     min-height: 100vh;
-}
-
-*, *::before, *::after {
-    box-sizing: inherit;
 }*/
+
