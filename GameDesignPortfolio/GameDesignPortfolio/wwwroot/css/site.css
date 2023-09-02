@@ -81,6 +81,54 @@ nav a.nav-link {
     font-size: 14px;
 }
 
+/*CSS to change the front page image*/
+.humanoid-image {
+    display: flex;
+    flex: auto;
+    opacity: 100%;
+}
+
+.top-body-part {
+    background-image: url(../Assets/HumanoidBanner.png);
+    height: 75vh;
+}
+
+.bg-image {
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.gamedesign-alinea {
+    position: relative;
+    background-color: black;
+    opacity: 75%;
+    width: 40%;
+    height: 75%;
+    left: 50%;
+    top: 50%;
+}
+
+.game-design-h1 {
+    margin-bottom: 0px;
+}
+
+/* Boemerang logo's */
+
+.boemerang-logo-alinea {
+    margin-top: 3%;
+    width: 72px;
+    height: 56px;
+}
+
+.boemerang-logo-navbar {
+    width: 36px;
+    height: 28px;
+    margin-bottom: 15px;
+}
+
 /*nav a:hover {
     color: #000;
     text-decoration: none;
