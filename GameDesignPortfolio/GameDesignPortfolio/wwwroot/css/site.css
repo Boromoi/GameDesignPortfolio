@@ -76,7 +76,7 @@ nav li::before {
     height: 5px;
     background-color: darkgray;
     position: absolute;
-    top: 20px;
+    top: 25px;
     width: 0%;
     transition: all ease-in-out 250ms;
 }
@@ -119,27 +119,28 @@ nav a.nav-link {
     height: 75%;
     left: 50%;
     top: 50%;
+
+    --portfoliobutton-border-left-and-right-size: 16px;
+    --portfoliobutton-border-top-and-bottom-size: 7px;
+    --portfolio-alinea-header-text-size: 40px;
 }
 
 .gamedesign-alinea:hover {
     --portfoliobutton-border-left-and-right-size: 20px;
     --portfoliobutton-border-top-and-bottom-size: 11px;
-    --portfolio-alinea-header-text-size: 50px; 
-    transition: all ease-in-out 250ms;
-}
-
-.change-text-size {
-    font-size: var(--portfolio-alinea-header-text-size);
+    --portfolio-alinea-header-text-size: 45px;
 }
 
 .alinea-row-1 {
     margin-bottom: 2%;
+    transition: all ease-in-out 700ms;
 }
 
 .alinea-row-2 {
     font-family: 'Playfair Display', 'Open Sans', Arial, Helvetica, sans-serif;
     font-weight: 600;
     margin-bottom: 5%;
+    transition: all ease-in-out 700ms;
 }
 
 .alinea-row-3 {
@@ -157,6 +158,8 @@ nav a.nav-link {
 .portfolio-Button {
     box-sizing: border-box;
     width: max-content;
+    text-decoration: none;
+    opacity: 1;
     /*box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));*/
     background-color: var(--portfoliobutton-background-color);
     /*background-color: var(--corvid-background-color,rgba(var(--bg,var(--color_17)),var(--alpha-bg,1)));*/
@@ -165,18 +168,20 @@ nav a.nav-link {
     border-right: var(--portfoliobutton-border-left-and-right-size) solid var(--portfoliobutton-background-color);
     border-top: var(--portfoliobutton-border-top-and-bottom-size) solid var(--portfoliobutton-background-color);
     border-bottom: var(--portfoliobutton-border-top-and-bottom-size) solid var(--portfoliobutton-background-color);
-    text-decoration: none;
-    opacity: 1;
     color: black;
+    transition: background-color ease-in-out 250ms, border ease-in-out 250ms, border-left ease-in-out 250ms, border-right ease-in-out 250ms, border-top ease-in-out 250ms, border-bottom ease-in-out 250ms;
 }
 
 .portfolio-Button:hover {
     --portfoliobutton-background-color: #0d6efd;
     color: white;
+    transition: all ease-in-out 500ms;
 }
 
 .game-design-h1 {
     margin-bottom: 0px;
+    font-size: var(--portfolio-alinea-header-text-size);
+    transition: font-size ease-in-out 250ms;
 }
 
 .white-text {
@@ -188,6 +193,7 @@ nav a.nav-link {
     margin-top: 3%;
     width: 72px;
     height: 56px;
+    transition: all ease-in-out 250ms;
 }
 
 .boemerang-logo-navbar {
