@@ -1,4 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+@import url('~/Assets/Fonts/Avenir-LT-35-Light-Regular/Avenir-LT-35-Light-Regular.ttf');
+
+:root {
+    --shd: none;
+    --portfoliobutton-background-color: white;
+    --portfolio-alinea-header-text-size: 40px;
+    --portfoliobutton-border-left-and-right-size: 10px;
+    --portfoliobutton-border-top-and-bottom-size: 7px;
+}
 
 /* Reset all Sizes */
 * {
@@ -34,7 +45,7 @@ html {
 
 body {
     margin-bottom: 60px;
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-family: 'Avenir LT 35 Light RegularFontsgeek', 'Open Sans', Arial, Helvetica, sans-serif;
     font-weight: 400;
 }
 
@@ -87,7 +98,7 @@ nav a.nav-link {
 }
 
 .top-body-part {
-    background-image: url(../Assets/HumanoidBanner.png);
+    background-image: url(../Assets/Images/HumanoidBanner.png);
     height: 75vh;
 }
 
@@ -102,6 +113,7 @@ nav a.nav-link {
 .gamedesign-alinea {
     position: relative;
     background-color: black;
+    color: #FFFFFF;
     opacity: 75%;
     width: 40%;
     height: 75%;
@@ -109,12 +121,15 @@ nav a.nav-link {
     top: 50%;
 }
 
-.display-grid {
-    display: grid;
+.gamedesign-alinea:hover {
+    --portfoliobutton-border-left-and-right-size: 20px;
+    --portfoliobutton-border-top-and-bottom-size: 11px;
+    --portfolio-alinea-header-text-size: 50px; 
+    transition: all ease-in-out 250ms;
 }
 
-.container-row-gap-alinea {
-    row-gap: 5px;
+.change-text-size {
+    font-size: var(--portfolio-alinea-header-text-size);
 }
 
 .alinea-row-1 {
@@ -122,13 +137,42 @@ nav a.nav-link {
 }
 
 .alinea-row-2 {
+    font-family: 'Playfair Display', 'Open Sans', Arial, Helvetica, sans-serif;
+    font-weight: 600;
     margin-bottom: 5%;
 }
 
 .alinea-row-3 {
     /*display: inline-block;
     max-width: 100%;*/
-    word-break: break-all; /* This wraps the text so that it stays inside the div element */
+    word-wrap: inherit;
+    word-break: break-word; /* This wraps the text so that it stays inside the div element */
+}
+
+.alinea-row-4 {
+    display: flex;
+    justify-content: center;
+}
+
+.portfolio-Button {
+    box-sizing: border-box;
+    width: max-content;
+    /*box-shadow: var(--shd,0 1px 4px rgba(0,0,0,.6));*/
+    background-color: var(--portfoliobutton-background-color);
+    /*background-color: var(--corvid-background-color,rgba(var(--bg,var(--color_17)),var(--alpha-bg,1)));*/
+    border: 1px solid var(--portfoliobutton-background-color);
+    border-left: var(--portfoliobutton-border-left-and-right-size) solid var(--portfoliobutton-background-color);
+    border-right: var(--portfoliobutton-border-left-and-right-size) solid var(--portfoliobutton-background-color);
+    border-top: var(--portfoliobutton-border-top-and-bottom-size) solid var(--portfoliobutton-background-color);
+    border-bottom: var(--portfoliobutton-border-top-and-bottom-size) solid var(--portfoliobutton-background-color);
+    text-decoration: none;
+    opacity: 1;
+    color: black;
+}
+
+.portfolio-Button:hover {
+    --portfoliobutton-background-color: #0d6efd;
+    color: white;
 }
 
 .game-design-h1 {
