@@ -198,6 +198,40 @@ nav a.nav-link {
     margin-bottom: 15px;
 }
 
+/* Contact area on home page */
+
+.contact a {
+    text-decoration: none;
+}
+
+.contact-bg {
+    background-color: rgb(30,30,30);
+}
+
+.contact-header-h1 {
+    font-family: 'Playfair Display', 'Open Sans', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    margin-bottom: 2%;
+    opacity: 80%;
+    transition: margin-bottom ease-in-out 700ms;
+}
+
+.contact-row-2 {
+    text-decoration: none;
+    margin-bottom: 2%;
+    transition: margin-bottom ease-in-out 700ms;
+}
+
+.contact-row-3 {
+    text-decoration: none;
+    padding-bottom: 1%;
+    transition: padding-bottom ease-in-out 700ms;
+}
+
+.contact-row-3 a {
+    margin-left: 1%;
+}
+
 /*nav a:hover {
     color: #000;
     text-decoration: none;
