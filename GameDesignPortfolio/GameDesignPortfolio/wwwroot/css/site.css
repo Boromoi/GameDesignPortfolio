@@ -9,6 +9,7 @@
     --portfolio-alinea-header-text-size: 40px;
     --portfoliobutton-border-left-and-right-size: 10px;
     --portfoliobutton-border-top-and-bottom-size: 7px;
+    --nav-transition-top-position: 25px;
 }
 
 /* Reset all Sizes */
@@ -34,8 +35,10 @@ html {
     }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+@media (max-width: 575px) {
+    :root {
+        --nav-transition-top-position: 18px;
+    }
 }
 
 html {
@@ -76,7 +79,7 @@ nav li::before {
     height: 5px;
     background-color: darkgray;
     position: absolute;
-    top: 25px;
+    top: var(--nav-transition-top-position);
     width: 0%;
     transition: all ease-in-out 250ms;
 }
