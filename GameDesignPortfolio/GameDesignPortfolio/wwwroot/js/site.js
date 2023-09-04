@@ -10,18 +10,12 @@ var navbarToggleButtonIsActive = new Boolean;
 function navbarToggleButtonPressed() {
     navbarToggleButtonPressedAmount++;
 
-    console.log(navbarToggleButtonPressedAmount);
-    console.log(navbarToggleButtonIsActive);
-
     // Check how many times the button has been pressed and set the button on active or false depending on the amount.
     if (navbarToggleButtonPressedAmount % 2 == 0) {
         navbarToggleButtonIsActive = false;
     } else {
         navbarToggleButtonIsActive = true;
     }
-
-    console.log(navbarToggleButtonPressedAmount);
-    console.log(navbarToggleButtonIsActive);
 
     // Change the background height depending on if the button is active or not.
     if (navbarToggleButtonIsActive) {
