@@ -24,6 +24,60 @@ html {
     font-size: 14px;
 }
 
+@media (max-width: 575px) {
+    :root {
+        --nav-transition-top-position: 18px;
+    }
+}
+
+/*@media (min-width: 249px) {
+    .contact-row-3 svg {
+        width: 42px;
+        height: 42px;
+}*/
+
+@media (min-width: 273px) {
+    .contact-row-3 svg {
+        width: 48px;
+        height: 48px;
+}
+
+@media (min-width: 326px) {
+    .contact-row-3 svg {
+        width: 52px;
+        height: 52px;
+    }
+
+    .gamedesign-alinea {
+        width: 80%;
+    }
+}
+
+@media (min-width: 339px) {
+    .contact-row-3 svg {
+        width: 58px;
+        height: 58px;
+    }
+}
+
+@media (min-width: 382px) {
+    .gamedesign-alinea {
+        width: 80%;
+    }
+}
+
+@media (min-width: 531px) {
+    .gamedesign-alinea {
+        width: 70%;
+    }
+}
+
+@media (min-width: 575px) {
+    .gamedesign-alinea {
+        width: 60%;
+    }
+}
+
 @media (min-width: 768px) {
     html {
         font-size: 16px;
@@ -35,9 +89,9 @@ html {
     }
 }
 
-@media (max-width: 575px) {
-    :root {
-        --nav-transition-top-position: 18px;
+@media (min-width: 992px) {
+    .gamedesign-alinea {
+        width: 40%;
     }
 }
 
@@ -102,7 +156,7 @@ nav a.nav-link {
 
 .top-body-part {
     background-image: url(../Assets/Images/HumanoidBanner.png);
-    height: 75vh;
+    height: 65vh;
 }
 
 .bg-image {
@@ -118,7 +172,6 @@ nav a.nav-link {
     background-color: black;
     color: #FFFFFF;
     opacity: 75%;
-    width: 40%;
     height: 75%;
     left: 50%;
     top: 50%;
