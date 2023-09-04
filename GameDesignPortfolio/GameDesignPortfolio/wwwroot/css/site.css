@@ -274,6 +274,7 @@ nav a.nav-link {
 }
 
 .contact-bg {
+    height: fit-content;
     background-color: rgb(30,30,30);
 }
 
@@ -290,12 +291,24 @@ nav a.nav-link {
     text-decoration: none;
     margin-bottom: 5px;
     transition: margin-bottom ease-in-out 700ms;
+    padding-top: 1px;
+}
+
+.contact-email {
+    color: white;
+    opacity: 80%;
+}
+
+.contact-email a {
+    opacity: 90%;
+    text-decoration: dotted underline;
 }
 
 .contact-row-3 {
     text-decoration: none;
-    padding-bottom: 1%;
     transition: padding-bottom ease-in-out 700ms;
+    padding-top: 10px;
+    padding-bottom: 12px;
 }
 
 .contact-row-3 a {
@@ -318,24 +331,15 @@ nav a.nav-link {
 
 @media (min-width: 273px) {
     .contact-row-3 svg {
-        margin-top: 10px;
         width: 48px;
         height: 48px;
-    }
-
-    .contact-bg {
-        height: 145px;
     }
 }
 
 @media (min-width: 291px) {
     .contact-row-3 svg {
-        margin-top: 10px;
         width: 50px;
         height: 50px;
-    }
-    .contact-bg {
-        height: 163px;
     }
 }
 
@@ -375,13 +379,13 @@ nav a.nav-link {
     }
 }
 
+@media (min-width: 614px) {
+}
+
 @media (min-width: 768px) {
     html {
         font-size: 16px;
     }
-}
-
-@media (min-width: 841px) {
 }
 
 @media (min-width: 992px) {
