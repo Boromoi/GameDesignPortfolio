@@ -138,6 +138,13 @@ nav a.nav-link {
 
 /* Footer */
 
+.footer-container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    /*display: flex;*/
+}
+
 .footer-selfmade {
     position: absolute;
     bottom: 0;
@@ -146,11 +153,13 @@ nav a.nav-link {
     line-height: 60px;
     background-color: gray;
     border-top: 1px solid #212529;
+    /*flex-grow: 1;*/
 }
 
 .copyright-text {
     color: white;
     opacity: 0.8;
+    /*flex-grow: 1;*/
 }
 
 /*CSS to change the front page image*/
