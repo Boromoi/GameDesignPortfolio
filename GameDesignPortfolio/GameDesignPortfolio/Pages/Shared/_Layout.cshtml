@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+<!--Copyright 2023 by Liam van Slingerlandt-->
 <html lang="en">
 
 <head>
@@ -12,34 +13,40 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                @*Normal Navbar section*@
+        <!--navbar container-->
+        <div class="navbar-container">
+            <!--navbar background-->
+            <div id="navbar-bg"></div>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
+                @* bg-white*@
+                <div class="container">
+                <!--Non collapse Navbar section-->
                 <a class="navbar-brand boemerang-logo-navbar" asp-area="" asp-page="/Index"><img src="~/Assets/Images/BOEMerang-Logo.png" /></a>
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Liam van Slingerlandt</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <a class="navbar-brand navbar-text" asp-area="" asp-page="/Index">Liam van Slingerlandt</a>
+                    <button id="navbar-toggle-button" class="navbar-toggler navbar-toggler-color" type="button" onclick="navbarToggleButtonPressed()" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        @*<span class="navbar-toggler-icon"></span>*@
+                        <svg class="navbar-toggler-icon-selfmade" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2'><path d='M4 7h22M4 15h22M4 23h22'></path></svg>
                 </button>
-                @*Collapsed Navbar section*@
+                <!--Collapsed Navbar section-->
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                      <ul class="navbar-nav flex-grow-1">                        
                         <li class="nav-item">
-                            <a class="text-dark text-decoration-none" asp-area="" asp-page="/Index">Home</a>
+                            <a class="navbar-text text-decoration-none" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="text-dark text-decoration-none" asp-area="" asp-page="/GameDesignPortfolio">Game Design Portfolio</a>
+                            <a class="navbar-text text-decoration-none" asp-area="" asp-page="/GameDesignPortfolio">Game Design Portfolio</a>
                         </li>
                         @*<li class="nav-item">
-                            <a class="text-dark text-decoration-none" asp-area="" asp-page="/SoftwareDevelopment">Software Development</a>
+                            <a class="navbar-text text-decoration-none" asp-area="" asp-page="/SoftwareDevelopment">Software Development</a>
                         </li>*@
                      </ul>
                 </div>
             </div>
         </nav>
+        </div>
     </header>
 
-    <div class="container">
+    <div class="container-selfmade">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

@@ -1,4 +1,34 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿/*---- Get elements -----*/
+const navbarToggleButton = document.getElementById("navbar-toggle-button");
+const navbarBackground = document.getElementById("navbar-bg");
 
-// Write your JavaScript code.
+/*---- Variables -----*/
+var navbarToggleButtonPressedAmount = 0;
+var navbarToggleButtonIsActive = new Boolean;
+
+// Function to change the navbar background when the navbarToggleButton get's pressed.
+function navbarToggleButtonPressed() {
+    navbarToggleButtonPressedAmount++;
+
+    console.log(navbarToggleButtonPressedAmount);
+    console.log(navbarToggleButtonIsActive);
+
+    // Check how many times the button has been pressed and set the button on active or false depending on the amount.
+    if (navbarToggleButtonPressedAmount % 2 == 0) {
+        navbarToggleButtonIsActive = false;
+    } else {
+        navbarToggleButtonIsActive = true;
+    }
+
+    console.log(navbarToggleButtonPressedAmount);
+    console.log(navbarToggleButtonIsActive);
+
+    // Change the background height depending on if the button is active or not.
+    if (navbarToggleButtonIsActive) {
+        // set background heigth to 108px
+        navbarBackground.style.setProperty('--navbar-background-height', '100px');
+    } else { 
+        // set background heigth to 60px
+        navbarBackground.style.setProperty('--navbar-background-height', '60px');
+    }
+}

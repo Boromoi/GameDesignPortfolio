@@ -10,6 +10,8 @@
     --portfoliobutton-border-left-and-right-size: 10px;
     --portfoliobutton-border-top-and-bottom-size: 7px;
     --nav-transition-top-position: 25px;
+    --navbar-text-opacity: 0.9;
+    --navbar-background-height: 60px;
 }
 
 /* Reset all Sizes */
@@ -20,84 +22,16 @@
     text-decoration: none;
 }
 
-html {
-    font-size: 14px;
-}
-
-@media (max-width: 575px) {
-    :root {
-        --nav-transition-top-position: 18px;
-    }
-}
-
-/*@media (min-width: 249px) {
-    .contact-row-3 svg {
-        width: 42px;
-        height: 42px;
-}*/
-
-@media (min-width: 273px) {
-    .contact-row-3 svg {
-        width: 48px;
-        height: 48px;
-}
-
-@media (min-width: 326px) {
-    .contact-row-3 svg {
-        width: 52px;
-        height: 52px;
-    }
-
-    .gamedesign-alinea {
-        width: 80%;
-    }
-}
-
-@media (min-width: 339px) {
-    .contact-row-3 svg {
-        width: 58px;
-        height: 58px;
-    }
-}
-
-@media (min-width: 382px) {
-    .gamedesign-alinea {
-        width: 80%;
-    }
-}
-
-@media (min-width: 531px) {
-    .gamedesign-alinea {
-        width: 70%;
-    }
-}
-
-@media (min-width: 575px) {
-    .gamedesign-alinea {
-        width: 60%;
-    }
-}
-
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
-
-    .sizecontainer {
-        width: 80%;
-        margin: 0 auto;
-    }
-}
-
-@media (min-width: 992px) {
-    .gamedesign-alinea {
-        width: 40%;
-    }
+.container-selfmade {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 html {
     position: relative;
     min-height: 100%;
+    font-size: 14px;
 }
 
 body {
@@ -113,6 +47,60 @@ header::after {
 }
 
 /* NavBar */
+
+.navbar-container {
+    display: block;
+    opacity: 1;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    z-index: 80;
+    min-width: 292px;
+}
+
+#navbar-bg {
+    background-color: #000000;
+    opacity: .6;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    height: var(--navbar-background-height);
+    -webkit-box-shadow: 0 0 38px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 38px 1px rgba(0,0,0,0.75);
+    box-shadow: 0 0 38px 1px rgba(0,0,0,0.75);
+
+    transition: height ease 350ms;
+}
+
+.navbar-text {
+    color: white;
+    opacity: var(--navbar-text-opacity);
+}
+
+.navbar-text:hover {
+    color: white;
+    opacity: var(--navbar-text-opacity);
+}
+
+.navbar-toggler-color {
+    color: white;
+    border-color: white;
+    opacity: var(--navbar-text-opacity);
+}
+
+.navbar-toggler-icon-selfmade {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
 
 nav ul {
     margin: 0;
@@ -156,7 +144,7 @@ nav a.nav-link {
 
 .top-body-part {
     background-image: url(../Assets/Images/HumanoidBanner.png);
-    height: 65vh;
+    height: 77vh; /* 700px kan ook*/
 }
 
 .bg-image {
@@ -286,6 +274,79 @@ nav a.nav-link {
 
 .contact-row-3 a {
     margin-left: 1%;
+}
+
+/* Media for specific screensizes */
+
+@media (max-width: 575px) {
+    :root {
+        --nav-transition-top-position: 18px;
+    }
+}
+
+/*@media (min-width: 249px) {
+    .contact-row-3 svg {
+        width: 42px;
+        height: 42px;
+}*/
+
+@media (min-width: 273px) {
+    .contact-row-3 svg {
+        width: 48px;
+        height: 48px;
+}
+
+@media (min-width: 326px) {
+    .contact-row-3 svg {
+        width: 52px;
+        height: 52px;
+    }
+
+    .gamedesign-alinea {
+        width: 80%;
+    }
+}
+
+@media (min-width: 339px) {
+    .contact-row-3 svg {
+        width: 58px;
+        height: 58px;
+    }
+}
+
+@media (min-width: 382px) {
+    .gamedesign-alinea {
+        width: 80%;
+    }
+}
+
+@media (min-width: 531px) {
+    .gamedesign-alinea {
+        width: 70%;
+    }
+}
+
+@media (min-width: 575px) {
+    .gamedesign-alinea {
+        width: 60%;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+
+    .sizecontainer {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .gamedesign-alinea {
+        width: 40%;
+    }
 }
 
 /*nav a:hover {
