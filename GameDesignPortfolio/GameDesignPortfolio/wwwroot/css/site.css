@@ -137,6 +137,23 @@ nav a.nav-link {
     font-size: 14px;
 }
 
+/* Footer */
+
+.footer-selfmade {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    background-color: gray;
+    border-top: 1px solid #212529;
+}
+
+.copyright-text {
+    color: white;
+    opacity: 0.8;
+}
+
 /*CSS to change the front page image*/
 .humanoid-image {
     opacity: 100%;
