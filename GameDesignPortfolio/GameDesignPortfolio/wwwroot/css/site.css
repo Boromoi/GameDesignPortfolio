@@ -529,6 +529,13 @@ nav a.nav-link {
     opacity: 0.9;
 }
 
+.projectpage-headers-small {
+    font-family: 'Playfair Display', 'Open Sans', Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 30px;
+    opacity: 0.9;
+}
+
 .projectpage-facts-container {
     margin-bottom: 20px;
 }
