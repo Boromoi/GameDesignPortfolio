@@ -313,6 +313,8 @@ nav a.nav-link {
     margin-bottom: 50px;
     text-align: center;
     overflow: hidden;
+    display: block;
+    box-sizing: border-box;
 }
 
 .projects-head-content {
@@ -323,6 +325,11 @@ nav a.nav-link {
     position: relative;
     transition: all .3s ease-in-out;
     overflow: hidden;
+}
+
+.projects-head-content:hover {
+    border-color: lightblue;
+    transition: all ease-in-out 300ms;
 }
 
 .projects-head-content-background {
@@ -336,6 +343,11 @@ nav a.nav-link {
     background-repeat: no-repeat;
     background-position: center;
     transition: all .3s ease-in-out;
+}
+
+.projects-head-content-background:hover {
+    background-size: 110%;
+    transition: all ease-in-out 300ms;
 }
 
 .projects-content-title-container {
@@ -360,6 +372,20 @@ nav a.nav-link {
     opacity: var(--text-opacity);
 }
 
+.projects-links {
+    box-sizing: border-box;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    /*border-bottom: 1px white dotted;*/
+}
+
+.projects-links:hover {
+    border: 1px solid blue;
+    transition: all ease-in-out 300ms;
+}
+
+/* Project Labels */
 .projects-content-labels-container {
     margin-top: 10px;
     width: 100%;

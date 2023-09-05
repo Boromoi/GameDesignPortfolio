@@ -1,7 +1,7 @@
 ﻿@page
-@model IndexModel
+@model GameDesignPortfolio.Pages.OnlineMultiplayerPongModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Online Multiplayer Pong Page";
 }
 
 <!--Top part of body / Text section-->
@@ -16,7 +16,7 @@
                     @*<h1 class="game-design-h1 white-text">Game</h1><h1 class="game-design-h1 white-text">Design</h1>*@
                 </div>
                 <div class="alinea-row-3">
-                    <p>Hi there! I am Liam a game programmer and designer from the Netherlands, currently studying at the Amsterdam University of Applied Sciences for my Bachelor's degree. I always liked programming especially the creative part of it even when I was younger. I began making websites and games when I was 12 years old, first in Scratch then in GamemakerStudio and now in Unity. I mostly make games but I also sometimes make websites in my free time, like the one you are on now! </p><br/><p>I am currently working on growing my portfolio by going on an internship, feel free to contact me if you have a fun project!</p>
+                    <p>Hi there! I am Liam a game programmer and designer from the Netherlands, currently studying at the Amsterdam University of Applied Sciences for my Bachelor's degree. I always liked programming especially the creative part of it even earlier on. I began making websites and games when I was 14 years old, first in Scratch then in GamemakerStudio and now in Unity. I also sometimes make website in my free time, like the one you are on now! </p><br/><p>I am currently working on growing my portfolio by going on an internship, feel free to contact me if you have a fun project!</p>
                 @*<p>Click below to view my portfolio.</p>*@
                     @*<p>I'm a game designer and programmer with a growing portfolio and an upcoming Bachelor's degree in video game design, programming and production.</p><br /><p>Click below to view my portfolio.</p>*@
                 </div>
@@ -45,23 +45,19 @@
                 <!--Projects content blocks-->
                 <div class="col-sm-6 col-md-6 col-lg-4">
                     <div class="projects-content-block-container">
-                        <!--Link to project page-->
-                        <a class="projects-links" asp-area="" asp-page="/Project-Pages/OnlineMultiplayerPong"> @*Go to Pong page*@
-                        <!--Head title and image-->
-                            <div class="projects-head-content">
-                                <div class="projects-head-content-background" style="background-image: url(/Assets/Images/PongIcon.png)"></div>
-                                <div class="projects-content-title-container">
-                                    <span class="projects-content-title">Online Multiplayer Pong</span>
-                                </div>
+                        <a href=""></a> @*Go to Pong page*@
+                        <div class="projects-head-content">
+                            <div class="projects-head-content-background" style="background-image: url(/Assets/Images/PongIcon.png)"></div>
+                            <div class="projects-content-title-container">
+                                <span class="projects-content-title">Online Multiplayer Pong</span>
                             </div>
-                        </a>
-                        <!--All Labels-->
+                        </div>
                         <div class="projects-content-labels-container">
                             <div class="projects-content-labels">
                                 <span>C#</span>
                             </div>
                             <div class="projects-content-labels" style="background-color: #bec712ad">
-                                <span>Online Multiplayer</span>
+                                <span>Multiplayer</span>
                             </div>
                         </div>
                     </div>
@@ -99,29 +95,3 @@
             </div>
         </div>
     </div>
-
-@*<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>*@
-
-@*<div class="container-fluid padding">
-    <div class="row text-center padding">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <i class="fas fa-bed"></i>
-            <h3>Rooms</h3>
-            <p>We got comfy rooms of different sizes.</p>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <i class="fas fa-utensils"></i>
-            <h3>Meals</h3>
-            <p>We provide the meals for breakfast and for dinner.</p>
-        </div>
-        <div class="col-xs-12 col-md-4">
-            <i class="fas fa-camera-retro"></i>
-            <h3>Jemeppe's Castle Tour</h3>
-            <p>We give a tour through the castle to give some entertainment.</p>
-        </div>
-    </div>
-    <hr class="my-4" style="background-color:lightgray;">
-</div>*@
