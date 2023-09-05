@@ -12,6 +12,7 @@
     --nav-transition-top-position: 25px;
     --navbar-background-height: 60px;
     --text-opacity: 0.9;
+    --about-me-heigth: 700px;
 }
 
 /* Reset all Sizes */
@@ -29,7 +30,7 @@
 }
 
 .main-theme-background {
-    background-color: #333;
+    background-color: #222;
 }
 
 html {
@@ -168,12 +169,8 @@ nav a.nav-link {
 
 /*CSS to change the front page image*/
 .humanoid-image {
-    opacity: 100%;
-}
-
-.top-body-part {
     background-image: url(../Assets/Images/HumanoidBanner.png);
-    height: 700px;
+    opacity: 100%;
 }
 
 .bg-image {
@@ -182,6 +179,10 @@ nav a.nav-link {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
+}
+
+.top-body-part {
+    height: var(--about-me-heigth);
 }
 
 .gamedesign-alinea {
@@ -272,6 +273,13 @@ nav a.nav-link {
 }
 
 /* Projects on home page */
+.homepage-projects-jump-offset {
+    display: block;
+    margin-top: -60px;
+    height: 60px;
+    visibility: hidden;
+}
+
 .projects-header-container {
     background-color: #1d1919;
     display: table;
@@ -408,6 +416,21 @@ nav a.nav-link {
     margin-top: 5px;
     text-align: center;
     border-radius: 4px;
+}
+
+.projects-content-desc-container {
+    margin-top: 10px;
+    max-width: 90%;
+    bottom: 0;
+    text-align: justify;
+    display: inline-block;
+}
+
+.projects-content-desc-item {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: 100;
+    font-size: 15px;
 }
 
 /* Contact area on home page */
@@ -573,12 +596,16 @@ nav a.nav-link {
 
 /* Media for specific screensizes */
 @media (max-width: 575px) {
-    : root {
+    :root {
         --nav-transition-top-position: 18px;
     }
 }
 
 @media (min-width: 273px) {
+    :root {
+        --about-me-heigth: 780px;
+    }
+
     .contact-row-3 svg {
         width: 48px;
         height: 48px;
@@ -590,6 +617,10 @@ nav a.nav-link {
 }
 
 @media (min-width: 291px) {
+    :root {
+        --about-me-heigth: 765px;
+    }
+
     .contact-row-3 svg {
         width: 50px;
         height: 50px;
@@ -610,11 +641,30 @@ nav a.nav-link {
     }
 }
 
+@media (min-width: 375px) {
+    :root {
+        --about-me-heigth: 700px;
+    }
+}
+
+
+
 @media (min-width: 438px) {
+    :root {
+        --about-me-heigth: 725px;
+    }
     .gamedesign-alinea {
         width: 80%;
     }
 }
+
+
+@media (min-width: 438px) {
+    :root {
+        --about-me-heigth: 700px;
+    }
+}
+
 
 @media (min-width: 531px) {
     .gamedesign-alinea {

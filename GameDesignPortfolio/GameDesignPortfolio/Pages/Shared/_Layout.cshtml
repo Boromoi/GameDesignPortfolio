@@ -23,7 +23,7 @@
                 <!--Non collapse Navbar section-->
                 <a class="navbar-brand boemerang-logo-navbar" asp-area="" asp-page="/Index"><img src="~/Assets/Images/BOEMerang-Logo.png" /></a>
                 <a class="navbar-brand navbar-text" asp-area="" asp-page="/Index">Liam van Slingerlandt</a>
-                    <button id="navbar-toggle-button" class="navbar-toggler navbar-toggler-color" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button id="navbar-toggle-button" class="navbar-toggler navbar-toggler-color" onclick="NavbarToggleButtonPressed()" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         @*<span class="navbar-toggler-icon"></span>*@
                         <svg class="navbar-toggler-icon-selfmade" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2'><path d='M4 7h22M4 15h22M4 23h22'></path></svg>
                 </button>
@@ -31,13 +31,13 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                      <ul class="navbar-nav flex-grow-1">                        
                         <li class="nav-item">
-                            <a class="navbar-text text-decoration-none" asp-area="" asp-page="/Index">Home</a>
+                            <a class="navbar-text text-decoration-none" asp-fragment="about-me" asp-area="" asp-page="/Index">About me</a>
                         </li>
                         <li class="nav-item">
-                            <a class="navbar-text text-decoration-none" asp-area="" asp-page="/Index">Projects</a>
+                                <a class="navbar-text text-decoration-none" asp-fragment="homepage-projects" asp-area="" asp-page="/Index">Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a class="navbar-text text-decoration-none" id="navbar-contact" onclick="scrollFunction(contact)" asp-area="" asp-page="/Index">Contact</a>
+                                <a class="navbar-text text-decoration-none" id="navbar-contact" asp-fragment="contact" asp-area="" asp-page="/Index">Contact</a>
                         </li>
                         <li class="nav-item">
                             <a class="navbar-text text-decoration-none" href="~/Assets/Documents/CV-LiamVanSlingerlandt-EnglishVersion.docx">Resume</a>

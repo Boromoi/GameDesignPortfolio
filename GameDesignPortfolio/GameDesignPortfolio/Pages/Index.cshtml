@@ -4,8 +4,8 @@
     ViewData["Title"] = "Home page";
 }
 <div class="main-theme-background">
-<!--Top part of body / Text section-->
-    <div class="top-body-part bg-image humanoid-image">
+<!--About me section-->
+    <div class="top-body-part bg-image humanoid-image" id="about-me">
         <div class="gamedesign-alinea align-content-center justify-content-center text-center text-white translate-middle">
             <div class="container-fluid">
                 <div class="alinea-row-1">
@@ -13,12 +13,9 @@
                 </div>
                 <div class="alinea-row-2">
                     <h1 class="game-design-h1 white-text">About</h1><h1 class="game-design-h1 white-text">Me</h1>
-                    @*<h1 class="game-design-h1 white-text">Game</h1><h1 class="game-design-h1 white-text">Design</h1>*@
                 </div>
                 <div class="alinea-row-3">
                     <p>Hi there! I am Liam a game programmer and designer from the Netherlands, currently studying at the Amsterdam University of Applied Sciences for my Bachelor's degree. I always liked programming especially the creative part of it even when I was younger. I began making websites and games when I was 12 years old, first in Scratch then in GamemakerStudio and now in Unity. I mostly make games but I also sometimes make websites in my free time, like the one you are on now! </p><br/><p>I am currently working on growing my portfolio by going on an internship, feel free to contact me if you have a fun project!</p>
-                @*<p>Click below to view my portfolio.</p>*@
-                    @*<p>I'm a game designer and programmer with a growing portfolio and an upcoming Bachelor's degree in video game design, programming and production.</p><br /><p>Click below to view my portfolio.</p>*@
                 </div>
                 <div class="alinea-row-4">
                     @*<a class="portfolio-Button" asp-area="" asp-page="/GameDesignPortfolio">Game Design Portfolio</a>*@
@@ -26,8 +23,10 @@
             </div>
         </div>
     </div>
+
 <!--Projects part of body-->
 <!--Projects header-->
+<div class="homepage-projects-jump-offset" id="homepage-projects"></div>
 <div class="projects-header-container">
     <div class="projects-header-content">
         @*group-projects*@
@@ -67,15 +66,19 @@
                                 <span>Online Multiplayer</span>
                             </div>
                         </div>
+                        <!--Description-->
+                        <div class="projects-content-desc-container">
+                            <div class="projects-content-desc-item">
+                                <span>I took one of the first games ever made Pong and remade it to have multiplayer. This project was used to practice working with online multiplayer games (peer to server). For testing I used a program called Clumsy to simulate Latency and Packet Loss.</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-@*<div class="personal-projects projects-container">
 
-</div>*@
 <!--Contact section-->
     <div class="contact contact-bg align-content-center justify-content-center text-center" id="contact">
         <div class="container-fluid">
@@ -103,11 +106,6 @@
         </div>
     </div>
 </div>
-
-@*<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>*@
 
 @*<div class="container-fluid padding">
     <div class="row text-center padding">

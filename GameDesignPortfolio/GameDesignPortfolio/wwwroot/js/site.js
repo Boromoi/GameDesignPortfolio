@@ -2,6 +2,7 @@
 const navbarToggleButton = document.getElementById("navbar-toggle-button");
 const navbarBackground = document.getElementById("navbar-bg");
 const navbarContact = document.getElementById("navbar-contact");
+const aboutMe = document.getElementById("about-me");
 
 /*---- Variables -----*/
 var navbarToggleButtonPressedAmount = 0;
@@ -21,7 +22,7 @@ function NavbarToggleButtonPressed() {
     // Change the background height depending on if the button is active or not.
     if (navbarToggleButtonIsActive) {
         // set background heigth to 108px
-        navbarBackground.style.setProperty('--navbar-background-height', '100px');
+        navbarBackground.style.setProperty('--navbar-background-height', '142px');
     } else { 
         // set background heigth to 60px
         navbarBackground.style.setProperty('--navbar-background-height', '60px');
@@ -65,5 +66,5 @@ navbarContact.addEventListener('click', DoScrolling.bind((window.scrollY, 1)));*
 
 function scrollFunction(scrollTo) {
     const element = document.getElementById(scrollTo);
-    element.scrollIntoView({ behavior: 'smooth' });
+    element.scrollTo(true, { behavior: 'smooth' });
 }
