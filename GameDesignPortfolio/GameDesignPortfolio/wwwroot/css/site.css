@@ -439,16 +439,14 @@ nav a.nav-link {
     }
 }
 
-/*@media (min-width: 249px) {
-    .contact-row-3 svg {
-        width: 42px;
-        height: 42px;
-}*/
-
 @media (min-width: 273px) {
     .contact-row-3 svg {
         width: 48px;
         height: 48px;
+    }
+
+    .gamedesign-alinea {
+        width: 100%;
     }
 }
 
@@ -464,10 +462,6 @@ nav a.nav-link {
         width: 52px;
         height: 52px;
     }
-
-    .gamedesign-alinea {
-        width: 80%;
-    }
 }
 
 @media (min-width: 339px) {
@@ -477,7 +471,7 @@ nav a.nav-link {
     }
 }
 
-@media (min-width: 382px) {
+@media (min-width: 438px) {
     .gamedesign-alinea {
         width: 80%;
     }
@@ -489,43 +483,26 @@ nav a.nav-link {
     }
 }
 
-@media (min-width: 575px) {
-    .gamedesign-alinea {
-        width: 60%;
-    }
-}
-
-@media (min-width: 614px) {
-}
-
 @media (min-width: 768px) {
     html {
         font-size: 16px;
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 900px) {
+    .gamedesign-alinea {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .gamedesign-alinea {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1400px) {
     .gamedesign-alinea {
         width: 40%;
     }
 }
-
-/*nav a:hover {
-    color: #000;
-    text-decoration: none;
-}
-
-nav a::before {
-    content: '';
-    display: block;
-    height: 5px;
-    background-color: #444;
-    position: absolute;
-    top: 0;
-    width: 0%;
-    transition: all ease-in-out 250ms;
-}
-
-nav a:hover::before {
-    width: 100%;
-}*/
