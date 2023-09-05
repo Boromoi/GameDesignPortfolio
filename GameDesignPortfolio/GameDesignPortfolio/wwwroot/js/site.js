@@ -62,3 +62,8 @@ function DoScrolling(elementY, duration) {
 }
 
 navbarContact.addEventListener('click', DoScrolling.bind((window.scrollY, 1)));*/
+
+function scrollFunction(scrollTo) {
+    const element = document.getElementById(scrollTo);
+    element.scrollIntoView({ behavior: 'smooth' });
+}
