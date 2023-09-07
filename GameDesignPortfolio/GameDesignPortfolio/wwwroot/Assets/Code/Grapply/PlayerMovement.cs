@@ -221,14 +221,44 @@ public class PlayerMovement : MonoBehaviour
         readyToJump = true;
     }
 
+    /// <summary>
+    /// This method is used for the grappling hook to jump to position
+    /// </summary>
+    /// <param name="targetPosition">The position where to jump to</param>
+    /// <param name="trajectoryHeight">The heigth of the trajectory that you hit during the jump</param>
     public void JumpToPosition(Vector3 targetPosition, float trajectoryHeight)
     {
         activeGrapple = true;
 
+        // Set the velocity for the jump to the target position.
         velocityToSet = CalculateJumpVelocity(transform.position, targetPosition, trajectoryHeight);
+        // Set the velocity on the player and also change the camera's field of view
         Invoke(nameof(SetVelocity), 0.1f);
-
+        // Change the field of fiew back and disable the activeGrapple boolean
         Invoke(nameof(ResetRestrictions), 3f);
+    }
+
+    /// <summary>
+    /// This method is to calculate the velocity to create a nice arc for the grappling hook.
+    /// </summary>
+    /// <param name="startPoint">This is the players starting position from where the arc begins</param>
+    /// <param name="endPoint">Where the player will end up</param>
+    /// <param name="trajectoryHeight">The height that you want to touch in the arc</param>
+    /// <returns>This returns the velocity the player needs to follow for a nice arc to the target position</returns>
+    private Vector3 CalculateJumpVelocity(Vector3 startPoint, Vector3 endPoint, float trajectoryHeight)
+    {
+        float gravity = Physics.gravity.y;
+        // Get the difference in start and endpoint y coordinates
+        float displacementY = endPoint.y - startPoint.y;
+        // Get the X and Z vector pointing towards the endpoint. (Direction)
+        Vector3 displacementXZ = new Vector3(endPoint.x - startPoint.x, 0f, endPoint.z - startPoint.z);
+        // Get the Y velocity
+        Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * trajectoryHeight);
+        // Get the XZ velocity to move towards the endpoint 
+        Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * trajectoryHeight / gravity)
+            + Mathf.Sqrt(2 * (displacementY - trajectoryHeight) / gravity));
+
+        return velocityXZ + velocityY;
     }
 
     private void SetVelocity()
@@ -245,16 +275,5 @@ public class PlayerMovement : MonoBehaviour
         cam.DoFov(walkingFov);
     }
 
-    private Vector3 CalculateJumpVelocity(Vector3 startPoint, Vector3 endPoint, float trajectoryHeight)
-    {
-        float gravity = Physics.gravity.y;
-        float displacementY = endPoint.y - startPoint.y;
-        Vector3 displacementXZ = new Vector3(endPoint.x - startPoint.x, 0f, endPoint.z - startPoint.z);
 
-        Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * trajectoryHeight);
-        Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * trajectoryHeight / gravity)
-            + Mathf.Sqrt(2 * (displacementY - trajectoryHeight) / gravity));
-
-        return velocityXZ + velocityY;
-    }
 }
