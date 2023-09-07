@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PlayerStateHandler : MonoBehaviour
 {
+    // Get the PlayerMovement script for certain booleans used in switching states
     [SerializeField]
     PlayerMovement pM;
+    // Get the animator of the player to switch animations
     [SerializeField]
     Animator animator;
 
-    public enum playerStates
+    // Enum to hold all the states for the player
+    private enum playerStates
     {
         idle, 
         walking, 
@@ -19,15 +22,13 @@ public class PlayerStateHandler : MonoBehaviour
         die
     }
 
-    public playerStates playerCurrentState = playerStates.idle;
+    // Initialize and declare the playerCurrentState to hold the player states
+    private playerStates playerCurrentState = playerStates.idle;
 
-    private void Awake()
-    {
-        //pM = GetComponent<PlayerMovement>();
-// animator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-    }
-
-    public void Update()
+    /// <summary>
+    /// Update() get's called every frame
+    /// </summary>
+    private void Update()
     {
         switch (playerCurrentState)
         {
@@ -52,133 +53,153 @@ public class PlayerStateHandler : MonoBehaviour
         }
     }
 
-    public void Idle()
+    /// <summary>
+    /// Method that get's called when the player state is playerStates.idle
+    /// </summary>
+    private void Idle()
     {
         // play Idle animation
         animator.Play("Idle00-Idle0");
 
-        // if the player is moving and running is not true
+        // if the player is moving and running is not true switch to walking state
         if ((pM.getHorizontalInput != 0 || pM.getVerticalInput != 0) && !pM.getRunning)
         {
             playerCurrentState = playerStates.walking;
         }
-        
-        // if the player is moving and running is true
+
+        // if the player is moving and running is true switch to running state
         if ((pM.getHorizontalInput != 0 || pM.getVerticalInput != 0) && pM.getRunning)
         {
             playerCurrentState = playerStates.running;
         }
 
-        // if the player is jumping (going up)
+        // if the player is jumping (going up) switch to jumping state
         if (pM.getJumping)
         {
             playerCurrentState = playerStates.jumping;
         }
 
-        // if the player is falling (going down)
+        // if the player is falling (going down) switch to falling state
         if (pM.getFalling)
         {
             playerCurrentState = playerStates.falling;
         }
     }
 
-    public void Walk()
+    /// <summary>
+    /// Method that get's called when the player state is playerStates.walking
+    /// </summary>
+    private void Walk()
     {
         // play Walk animation
         animator.Play("Walk00-Walk0");
 
-        // if the player is standing still
+        // if the player is standing still switch to idle state
         if (pM.getHorizontalInput == 0 && pM.getVerticalInput == 0)
         {
             playerCurrentState = playerStates.idle;
         }
 
-        // if the player is moving and running is true
+        // if the player is moving and running is true switch to running state
         if ((pM.getHorizontalInput != 0 || pM.getVerticalInput != 0) && pM.getRunning)
         {
             playerCurrentState = playerStates.running;
         }
 
-        // if the player is jumping (going up)
+        // if the player is jumping (going up) switch to jumping state
         if (pM.getJumping)
         {
             playerCurrentState = playerStates.jumping;
         }
 
-        // if the player is falling (going down)
+        // if the player is falling (going down) switch to falling state
         if (pM.getFalling)
         {
             playerCurrentState = playerStates.falling;
         }
     }
 
-    public void Run()
+    /// <summary>
+    /// Method that get's called when the player state is playerStates.running
+    /// </summary>
+    private void Run()
     {
         // play Running animation
         animator.Play("Run00-Run0");
 
-        // if the player is standing still
+        // if the player is standing still switch to idle state
         if (pM.getHorizontalInput == 0 && pM.getVerticalInput == 0)
         {
             playerCurrentState = playerStates.idle;
         }
 
-        // if the player is jumping (going up)
+        // if the player is jumping (going up) switch to jumping state
         if (pM.getJumping)
         {
             playerCurrentState = playerStates.jumping;
         }
 
-        // if the player is falling (going down)
+        // if the player is falling (going down) switch to falling state
         if (pM.getFalling)
         {
             playerCurrentState = playerStates.falling;
         }
     }
 
-    public void Jump()
+    /// <summary>
+    /// Method that get's called when the player state is playerStates.jumping
+    /// </summary>
+    private void Jump()
     {
-        // play Jumping animation
+        // Play Jumping animation
         animator.Play("Jump00-Jump0");
 
-        // if the player is falling (going down)
+        // If the player is falling (going down) switch to falling state
         if (pM.getFalling)
         {
             playerCurrentState = playerStates.falling;
         }
     }
 
-    public void Falling()
+    /// <summary>
+    /// Method that get's called when the player state is playerStates.falling
+    /// </summary>
+    private void Falling()
     {
-        // play Falling animation
+        // Play Falling animation
+        // Currently don't have falling animation yet
 
-        // if the player is standing still
+        // if the player is standing still switch to idle state
         if (pM.getHorizontalInput == 0 && pM.getVerticalInput == 0 && pM.getGrounded)
         {
             playerCurrentState = playerStates.idle;
         }
 
-        // if the player is moving and running is not true
+        // if the player is moving and running is not true switch to walking state
         if ((pM.getHorizontalInput != 0 || pM.getVerticalInput != 0) && !pM.getRunning && pM.getGrounded)
         {
             playerCurrentState = playerStates.walking;
         }
 
-        // if the player is moving and running is true
+        // if the player is moving and running is true switch to walking running
         if ((pM.getHorizontalInput != 0 || pM.getVerticalInput != 0) && pM.getRunning && pM.getGrounded)
         {
             playerCurrentState = playerStates.running;
         }
 
-        // if the player is falling (going down)
+        // if the player is falling (going down) switch to falling state
         if (pM.getFalling)
         {
             playerCurrentState = playerStates.falling;
         }
     }
 
-    public void Die()
+    /// <summary>
+    /// Method that get's called when the player state is playerStates.die
+    /// </summary>
+    private void Die()
     {
-        // play Death animation
+        // play Death Animation
+        // play Death Sound Effect
     }
 }

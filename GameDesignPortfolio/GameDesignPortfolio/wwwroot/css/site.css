@@ -433,6 +433,15 @@ nav a.nav-link {
     font-size: 15px;
 }
 
+.projects-content-cell {
+    padding-right: 5px;
+    text-align: left;
+    vertical-align: top;
+    text-wrap: normal;
+    word-wrap: break-word;
+    font-size: 19px;
+}
+
 /* Contact area on home page */
 .contact a {
     text-decoration: none;
@@ -600,7 +609,7 @@ nav a.nav-link {
 }
 
 /* Humanoid Page */
-.humanoid-image {
+.humanoid-banner {
     opacity: 1;
     height: 100%;
     /*width: 100%;*/
