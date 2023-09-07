@@ -517,11 +517,6 @@ nav a.nav-link {
     max-width: none;
 }
 
-.pong-Image {
-    opacity: 0.95;
-    width: 100%;
-}
-
 .projectpage-container-whole-section {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-weight: 300;
@@ -592,6 +587,23 @@ nav a.nav-link {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.project-list-item {
+    list-style-type: disc;
+}
+
+/* Pong Page */
+.pong-image {
+    opacity: 0.95;
+    width: 100%;
+}
+
+/* Humanoid Page */
+.humanoid-image {
+    opacity: 1;
+    height: 100%;
+    /*width: 100%;*/
 }
 
 /* Media for specific screensizes */

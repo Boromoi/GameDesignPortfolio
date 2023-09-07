@@ -1,0 +1,173 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.Events;
+
+public class BaseEnemy : MonoBehaviour, IEnemy
+{
+    // SerializeField for the endgoal so that the enemy can walk to it.
+    [SerializeField] protected EndGoal endGoal;
+    // List of Positions to serve as Waypoints for pathfinding.
+    [SerializeField] public List<Transform> waypoints;
+    // The distance to check if the enemy is in range of the waypoint to activate the next.
+    [SerializeField] protected float DistanceToWaypoint;
+    // A timer to let the enemy wait for a certain time when they reached a waypoint.
+    [SerializeField] protected float WaitTimeOnWaypoint;
+
+    // Waypoint position to walk towards
+    protected Transform currentWaypointTarget;
+    // A counter to know which waypoint to walk to next and to know if the enemy is at the last waypoint (endgoal).
+    protected int waypointCounter = 0;
+
+    // NavMeshAgent so that the enemy can move over a NavMesh to a certain position on the ground
+    protected NavMeshAgent agent;
+
+    // Check if the enemy is moving
+    protected bool moving = true;
+    // Check if the enemy is at the EndGoal
+    public bool atEndGoal = false;
+
+    // Declare and initialize a variable to hold the currentstate of the enemy
+    [SerializeField] EnemyStates enemyCurrentState = EnemyStates.moveToEndGoal;
+
+
+    /// <summary>
+    /// Start() get's called once when object starts in the Unity scene
+    /// </summary>
+    protected virtual void Start()
+    {
+        // Get the NavMeshAgent component
+        agent = GetComponent<NavMeshAgent>();
+
+        // Check if no components are missing
+        if (agent == null) { UnityEngine.Debug.LogError("NavMeshAgent is missing"); }
+
+        // Start moving towards the first waypoint
+        MoveToFirstWaypoint();
+    }    
+    
+    /// <summary>
+    /// Update() get's called every frame.
+    /// </summary>
+    protected virtual void Update()
+    {
+        StateHandler();
+    }
+
+
+    /// <summary>
+    ///  StateMachine for the enemy
+    /// </summary>
+    protected virtual void StateHandler()
+    {
+        // Change the enemyState depending on te situation
+        // If the enemy is not at the end goal, set enemy state to moveToEndGoal
+        if (!atEndGoal) enemyCurrentState = EnemyStates.moveToEndGoal;
+        // If the enemy is at the end goal, set enemy state to atEndGoal
+        if (atEndGoal) enemyCurrentState = EnemyStates.atEndGoal;
+
+        // StateMachine for the enemy states
+        switch (enemyCurrentState)
+        {
+            case EnemyStates.moveToEndGoal:
+                MoveToEndGoal();
+                break;
+            case EnemyStates.atEndGoal:
+                EnemyAtEndGoal();
+                break;
+            default:
+                break;
+        }
+    }
+
+    //================================
+    //          Waypoints
+    //================================
+
+    /// <summary>
+    /// Method to set the first waypoint and move towards it.
+    /// </summary>
+    protected void MoveToFirstWaypoint()
+    {
+        // Start moving towards the first waypoint
+        // If there are waypoints and if the first waypoint is not null
+        if (waypoints.Count > 0 && waypoints[0] != null)
+        {
+            // Set target waypoint
+            currentWaypointTarget = waypoints[waypointCounter];
+
+            // Start moving towards the next target waypoint
+            agent.SetDestination(currentWaypointTarget.position);
+        }
+    }
+
+    /// <summary>
+    /// State Move towards the endGoal
+    /// </summary>
+    protected virtual void MoveToEndGoal()
+    {
+        // Check if the enemy got a Waypoint as target
+        if (currentWaypointTarget != null)
+        {
+            // Walk to the next waypoint
+            // Check if the agent is at the target waypoint position
+            if ((Vector3.Distance(transform.position, currentWaypointTarget.position) <= DistanceToWaypoint) && moving)
+            {
+                // Set moving to false to prevent an infinite loop
+                moving = false;
+                StartCoroutine("MoveToNextWaypoint");
+            }
+        }
+    }
+
+    /// <summary>
+    /// Method to move towards the next waypoint in the waypoints list
+    /// </summary>
+    /// <returns></returns>
+    protected IEnumerator MoveToNextWaypoint()
+    {
+        // Set the counter to the next waypoint
+        waypointCounter++;
+
+        // Check if the enemy has reached the endgoal
+        if (waypointCounter < waypoints.Count)
+        {
+            // If this is the first waypoint...
+            if (waypointCounter == 1)
+            {
+                // ...Delay before going to the next waypoint
+                yield return new WaitForSeconds(WaitTimeOnWaypoint);
+            }
+
+            // Set the currentTarget the same as the next waypoint
+            currentWaypointTarget = waypoints[waypointCounter];
+        }
+        // If the enemy is at the last waypoint atEnd is true
+        else if (waypointCounter == waypoints.Count)
+        {
+            atEndGoal = true;
+        }
+
+        // Move the enemy to the position of the current waypoint target
+        agent.SetDestination(currentWaypointTarget.position);
+        moving = true;
+    }
+
+    /// <summary>
+    /// If the enemy is at the endgoal call this method to destroy or pool the enemy
+    /// This method performs all logic when an enemy is at the endGoal
+    /// </summary>
+    protected void EnemyAtEndGoal()
+    {
+        // Kill this enemy
+        Destroy(this.gameObject);
+
+        // Dead sound effects
+        // Dead animation
+
+        // Take one live away from the endGoal
+        endGoal.setEndGoalLivesMinusOne();
+    }
+}
