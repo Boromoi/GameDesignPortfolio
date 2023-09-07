@@ -1,7 +1,7 @@
 ﻿@page
-@model GameDesignPortfolio.Pages.Humanoid
+@model GameDesignPortfolio.Pages.Grapply
 @{
-    ViewData["Title"] = "Humanoid Page";
+    ViewData["Title"] = "Grapply Page";
 }
 
 <!--Top part of body / Text section-->
@@ -10,7 +10,7 @@
         <div class="projectpage-background-slider">
             <div class="projectpage-background-image">
                 @*translate-middle*@
-                <img class="humanoid-banner" src="~/Assets/Images/HumanoidBanner.png" />
+                <img class="humanoid-banner" src="~/Assets/Images/Grapply/GrapplyBanner.png" />
             </div>
         </div>
     </div>
@@ -19,14 +19,14 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <!--Project Title-->
-                    <div class="projectpage-title"><span>Humanoid</span></div>
+                    <div class="projectpage-title"><span>Grapply</span></div>
                     <!--Project Facts-->
                     <div class="projectpage-facts-container">
                         <table class="projectpage-facts-table">
                             <tbody>
                                 <tr>
                                     <td class="projectpage-facts-cell"><strong>Project Type</strong></td>
-                                    <td class="projectpage-facts-cell">University / Group project</td>
+                                    <td class="projectpage-facts-cell">University / Individual project</td>
                                 </tr>
                                 <tr>
                                     <td class="projectpage-facts-cell"><strong>Software Used</strong></td>
@@ -40,34 +40,30 @@
                                     <td class="projectpage-facts-cell"><strong>Primary Role(s)</strong></td>
                                     <td class="projectpage-facts-cell">Gameplay programmer / designer</td>
                                 </tr>
-                                <tr>
-                                    <td class="projectpage-facts-cell"><strong>Secondary Role(s)</strong></td>
-                                    <td class="projectpage-facts-cell">Planner and Note taker</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
                     <!--Project Video-->
-                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/Szn540fUt7k" frameborder="0" allowfullscreen=""></iframe></div>
-                    <div class="projectpage-headers-small"><a class="portfolio-Button projectpage-code-links align-content-center justify-content-center text-center" href="https://team-putdeksel.itch.io/humanoid">Humanoid Itch.io page</a></div>
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/eQxOi6O0C9Y" frameborder="0" allowfullscreen=""></iframe></div>
+                    <div class="projectpage-headers-small"><a class="portfolio-Button projectpage-code-links align-content-center justify-content-center text-center" href="https://boromoi.itch.io/grapply">Grapply Itch.io page</a></div>
                     <div class="projectpage-headers"><span>Description</span></div>
                     <!--Project Content-->
                     <div class="projectpage-contents">
                         <!--Project Description-->
-                        <p>Humanoid is a 3d tower defense game, played in the setting of a post apocalyptic city where you play as the last uncorrupted robot, that needs to protect the last remaining settlement from the corrupted robots. The robots were made by the humans with the intend to protect them but alas some got corrupted and the rest followed... I made Humanoid in my second year of university as a group project in a team of five including me, the project took around four months to make.</p>
-                        <p>This is what I made in this project:</p>
+                        <p>Grapply is a 3D platformer where the core mechanic is grappling with a grappling hook. This project was meant to focus on creating the game around a good game design document. I made Grapply in my second year of university as a Individual project, the project took around three days to make.</p>
+                        <p>This is what I am most proud of in this project:</p>
                         <ul>
-                            <li class="project-list-item">I made all the enemies AI and pathfinding using a statemachine, pathfinding waypoints.</li>
-                            <li class="project-list-item">I made a finite statemachine for the player to transition animations.</li>
-                            <li class="project-list-item">I made all turret placing animations and also the shader for the wall.</li>
-                        </ul>                        
+                            <li class="project-list-item">I made a grappling hook that is based on physics.</li>
+                            <li class="project-list-item">I made a red guiding sphere where the grappling hook would attach.</li>
+                            <li class="project-list-item">I made a game design document that is pretty tought out.</li>
+                        </ul>
                         <div class="projectpage-headers"><span>Highlights & Code</span></div>
                         <p>I have made the .cs download files of type .txt so that they can be downloaded, they can't be downloaded thanks to security on .cs files. Just make sure to change it back to .cs if you want to view it properly in an editor. </p>
                         <p>If you don't want to download the files to view them, just scroll down a bit and you will see an html embeded version.</p>
                         <table class="projectpage-facts-table text-center">
-                            <tbody>
+                            <tbody>                                
                                 <tr>
-                                    <td><a class="projectpage-code-links" download href="/Assets/Code/Humanoid/BaseEnemy.txt">BaseEnemy.cs Download</a></td>
+                                    <td><a class="projectpage-code-links" href="/Assets/Documents/Grapply/Grapply-GameDesignDocument.docx">Grapply Game Design Document</a></td>
                                 </tr>
                                 <tr>
                                     <td><a class="projectpage-code-links" download href="/Assets/Code/Humanoid/PlayerStateHandler.txt">PlayerStateHandler.cs Download</a></td>
