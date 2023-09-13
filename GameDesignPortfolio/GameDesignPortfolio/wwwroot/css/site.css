@@ -602,6 +602,13 @@ nav a.nav-link {
     list-style-type: disc;
 }
 
+.projectpage-gif {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
 /* Pong Page */
 .pong-image {
     opacity: 0.95;
