@@ -615,6 +615,13 @@ nav a.nav-link {
     /*width: 100%;*/
 }
 
+/* Grapply Page */
+.grapply-banner {
+    opacity: 1;
+    height: 100%;
+    width: 100%;
+}
+
 /* Media for specific screensizes */
 @media (max-width: 575px) {
     :root {
